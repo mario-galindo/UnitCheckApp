@@ -38,7 +38,8 @@ var app = angular.module('UnitCheckApp', [
 						}
 					},
 
-					templateUrl:'views/consulta.html'
+					templateUrl:'views/consulta.html',
+					controller:'consultaControl'
 				})
 
 				
