@@ -26,8 +26,9 @@ app.controller('loginControl',function($scope,$http,$location,$rootScope){
 			//Cuando el request sea exitoso nos devuelve la informacion en la variable data
 			}).then(function(data) {
     			
-    			console.log(data);
-
+    			var res = data.data;
+    			console.log(res);
+    			/*
     			if($scope.usuario == 'mario' && $scope.password == '123'){
     				
     				$rootScope.logeado = true;
@@ -37,6 +38,20 @@ app.controller('loginControl',function($scope,$http,$location,$rootScope){
     			}else{
     				console.log("No Existe");
     			}
+				*/
+
+
+				if (typeof res.token === "undefined") {
+
+					alert(res.message);
+				}else{
+
+					$rootScope.logeado = true;
+
+    				$location.path('/main');
+    				console.log("Si Existe!!");
+				}
+
 
     		//Cuando hay un error en el request nos devuelve el error en la variable error
   			}, function(error) {
