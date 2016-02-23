@@ -30,6 +30,18 @@ app.controller('consultaControl',function($scope,$http,tokenService){
 
 			$scope.ListaDatos = data.data.info;
 
+
+
+			if ($scope.ListaDatos.length > 0) {
+				$.bootstrapGrowl("Registros encontrados",{
+					type:'success'
+				});
+			}else {
+				$.bootstrapGrowl("Verifique IMEI, no se encontro registros",{
+					type:'danger'
+				});
+			}
+
 			$scope.unidad = "";
 			$scope.server = "";
 

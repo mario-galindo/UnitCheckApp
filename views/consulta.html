@@ -8,11 +8,11 @@
 
 <br>
 
-<form class="form-publicar">
+<form class="form-publicar" ng-submit="consultaUnidad()">
 <div class="col-md-6">
       <div class="form-group">
         <label>IMEI Unidad</label>
-        <input type="text" class="form-control" placeholder="Digite codigo IMEI de Unidad" ng-model = "unidad">
+        <input type="number" class="form-control" min="101504" placeholder="Digite codigo IMEI de Unidad" ng-model = "unidad" required>
       </div>
 </div>
 
@@ -21,7 +21,7 @@
 <div class="col-md-6">
       <div class="form-group">
         <label>Servidor</label>
-        <select class="form-control" ng-model="server" >
+        <select class="form-control" ng-model="server" required>
           <option value="" disabled selected>Seleccione un servidor</option>
           <option value="Honduras">Honduras</option>
           <option value="Cerveceria">Cerveceria</option>
@@ -30,17 +30,16 @@
 </div>
 
 <div id = "centrado">
-	<button type="button" class="btn btn-primary" ng-click="consultaUnidad()">Consultar</button>
+	<button type="submit" class="btn btn-primary">Consultar</button>
 </div>
 <br>
 <div class="ibox-content scroll65vh">
+
                     <table class="table table-striped miTable">
                         <thead>
                         <tr>
                             <th>Unidad</th>
                             <th>Fecha</th>
-                            <th>Latitud</th>
-                            <th>Longitud</th>
                             <th>Velocidad</th>
                             <th>Ver en Mapa</th>
 
@@ -50,8 +49,6 @@
                             <tr ng-repeat="row in ListaDatos" >
                                 <td>{{row.Unit}}</td>
                                 <td>{{row.Date}}</td>
-                                <td>{{row.Latitude}}</td>
-                                <td>{{row.Longitude}}</td>
                                 <td>{{row.Speed}}</td>
                                 <td><a target="_blank" href={{row.mapa}}><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>Ubicar</a></td>
 
