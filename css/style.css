@@ -3,14 +3,14 @@
 #login_page{
     background: url(http://mymaplist.com/img/parallax/back.png);
 	background-color: #444;
-    background: url(http://mymaplist.com/img/parallax/pinlayer2.png),url(http://mymaplist.com/img/parallax/pinlayer1.png),url(http://mymaplist.com/img/parallax/back.png);    
+    background: url(http://mymaplist.com/img/parallax/pinlayer2.png),url(http://mymaplist.com/img/parallax/pinlayer1.png),url(http://mymaplist.com/img/parallax/back.png);
 
 
 	width: 100%;
 	min-height: 100%;
 	height: auto !important;
 	position: fixed;
-	top:0; 
+	top:0;
 	left:0;
 }
 
@@ -26,10 +26,12 @@
 
 
 .form-publicar{
-	
+
 	max-width: 700px;
 	margin: 0 auto;
 	padding: 1px 25px 25px 25px;
 }
 
-
+.miTable{
+  text-align: center;
+}

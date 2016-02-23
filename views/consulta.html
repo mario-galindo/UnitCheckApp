@@ -16,20 +16,49 @@
       </div>
 </div>
 
-  
+
 
 <div class="col-md-6">
       <div class="form-group">
         <label>Servidor</label>
-        <input type="text" class="form-control" placeholder="Escriba el nombre de servidor" ng-model = "server">
+        <select class="form-control" ng-model="server" >
+          <option value="" disabled selected>Seleccione un servidor</option>
+          <option value="Honduras">Honduras</option>
+          <option value="Cerveceria">Cerveceria</option>
+        </select>
       </div>
 </div>
 
 <div id = "centrado">
 	<button type="button" class="btn btn-primary" ng-click="consultaUnidad()">Consultar</button>
 </div>
+<br>
+<div class="ibox-content scroll65vh">
+                    <table class="table table-striped miTable">
+                        <thead>
+                        <tr>
+                            <th>Unidad</th>
+                            <th>Fecha</th>
+                            <th>Latitud</th>
+                            <th>Longitud</th>
+                            <th>Velocidad</th>
+                            <th>Ver en Mapa</th>
 
-	
+                        </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="row in ListaDatos" >
+                                <td>{{row.Unit}}</td>
+                                <td>{{row.Date}}</td>
+                                <td>{{row.Latitude}}</td>
+                                <td>{{row.Longitude}}</td>
+                                <td>{{row.Speed}}</td>
+                                <td><a target="_blank" href={{row.mapa}}><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>Ubicar</a></td>
 
+                            </tr>
 
+                        </tbody>
+                    </table>
+
+                </div>
 </form>

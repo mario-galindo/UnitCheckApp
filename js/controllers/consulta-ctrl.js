@@ -1,5 +1,6 @@
-app.controller('consultaControl',function($scope,$http){
+app.controller('consultaControl',function($scope,$http,tokenService){
 
+	$scope.ListaDatos = [];
 
 	//Atributos
 	$scope.unidad =  "";
@@ -9,7 +10,7 @@ app.controller('consultaControl',function($scope,$http){
 	//Request
 	$scope.consultaUnidad = function(){
 
-		
+
 		//Variable con los parametros
 		var data = {
 
@@ -20,17 +21,23 @@ app.controller('consultaControl',function($scope,$http){
 		$http({
 
 			method:'GET',
-			url:'http://rastreo1.sabuesotrack.com:3000/posiciones'
-		
+			params:data,
+			url:'http://rastreo1.sabuesotrack.com/check/posiciones'
+
 		}).then(function(data){
 
-			console.log(data);
+
+
+			$scope.ListaDatos = data.data.info;
+
+			$scope.unidad = "";
+			$scope.server = "";
 
 		},function(error){
 
 			console.log(error);
 		});
-		
+
 		//alert($scope.unidad + " " + $scope.server)
 	};
 

@@ -7,7 +7,7 @@
 			    	<img src="images/logo.png" class = "img-responsive">
 			 	</div>
 			  	<div class="panel-body" >
-			    	<form accept-charset="UTF-8" role="form" >
+			    	<form accept-charset="UTF-8" role="form" ng-submit="funcion_login()">
                     <fieldset>
 			    	  	<div class="form-group">
 			    		    <input class="form-control" placeholder="Usuario" name="usuario" type="text" ng-model = "usuario">
@@ -15,8 +15,8 @@
 			    		<div class="form-group">
 			    			<input class="form-control" placeholder="Password" name="password" type="password" ng-model = "password">
 			    		</div>
-			    		
-			    		<input class="btn btn-lg btn-success btn-block" type="submit" value="Login" ng-click="funcion_login()">
+
+			    		<input class="btn btn-lg btn-success btn-block" type="submit" value="Login">
 			    	</fieldset>
 			      	</form>
 			    </div>
@@ -25,4 +25,3 @@
 		</div>
 	</div>
 </div>
-	

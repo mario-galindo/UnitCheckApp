@@ -1,13 +1,14 @@
 var app = angular.module('UnitCheckApp', [
 
 		'ngRoute'
+
 	])
 
 		.config(function($routeProvider) {
-			
+
 			$routeProvider
 				.when('/',{
-					
+
 					templateUrl:'views/login.html',
 					controller:'loginControl'
 				})
@@ -42,7 +43,7 @@ var app = angular.module('UnitCheckApp', [
 					controller:'consultaControl'
 				})
 
-				
+
 				.otherwise({
 
 					redirectTo:'/'
